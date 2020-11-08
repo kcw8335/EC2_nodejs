@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>방문할때마다 변하는 이미지</title>
+<script language = "javascript">
+	var imgArray = new Array();
+	imgArray[0] = "IMG/E1_T1_GL.png";
+	imgArray[1] = "IMG/E1_T1_O.png";
+	imgArray[2] = "IMG/E1_T2_GL.png"
+	imgArray[3] = "IMG/E1_T2_O.png";
+	
+	function showImage(){
+		var imgNum = Math.round(Math.random()*3);
+		var objImg = document.getElementById("introImg");
+		objImg.src = imgArray[imgNum];
+	}
+</script>
+</head>
+<body onload = "showImage()">
+	<img id = "introImg" border="0">
+</body>
+</html>

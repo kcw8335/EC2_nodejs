@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<!--<META HTTP-EQUIV="refresh" CONTENT="3">-->
+    <title>DashBoard</title> 
+    <style>
+		
+    </style>
+	
+	<!-- <script language="JavaScript">
+	//리프레쉬 -> 이미지 변경
+	  function refreshImg() {
+	  var E_num_1=1;
+	  var T_num_1=Math.floor(Math.random() * 4) + 1;
+	  var E_num_2=2;
+	  var T_num_2=Math.floor(Math.random() * 4) + 1;
+      document.getElementById("img_E1").src = "IMG/E"+E_num_1+"_T"+T_num_1+"_O.png"; 
+	  document.getElementById("img_E2").src = "IMG/E"+E_num_2+"_T"+T_num_2+"_O.png"; 
+	  Id = setTimeout("refreshImg()", 2000);
+	  }
+	</script>
+	 -->
+  </head>
+
+  <script src="/socket.io/socket.io.js"></script>
+	<script src="/dashboard.js"></script>
+  <body>
+ 
+    <div id="container">
+      <div id="header"> 
+        <h1>사고뭉치 프로젝트</h1>  
+      </div>
+	  
+      <div id="content">
+        <h2>DashBoard</h2>  <button onclick="refreshImg()">IMG_TEST</button>
+			<hr><br><br>
+			<div>
+			   <div style="float:left">
+					<img id="img_E1" width="400px">
+					<!-- src="IMG/E1_T1_GL.png"  -->
+			   </div>
+			   <div style="float:left">
+					<img id="img_E2" width="400px"> 
+					<!-- src="IMG/E2_T1_GL.png" -->
+			   </div>
+			</div>
+			
+			
+			<div id="lights" style="margin-top:30px; padding-left:50px;">
+			  <div style="float:left; margin-right:100px;">
+			    <h2> < Edge 1 > </h2>
+				<p>E1_T1 : <input type="text" name="E1_T1" size=20 placeholder="받아올곳 표시용"> </p>
+				<p>E1_T2 : <input type="text" name="E1_T2" size=20> </p>
+				<p>E1_T3 : <input type="text" name="E1_T3" size=20> </p>
+				<p>E1_T4 : <input type="text" name="E1_T4" size=20> </p>
+			  </div >
+			  <div style="float:left; padding-left:100px;">
+			    <h2> < Edge 2 > </h2>
+				<p>E2_T1 : <input type="text" name="E2_T1" size=20> </p>
+				<p>E2_T2 : <input type="text" name="E2_T2" size=20> </p>
+				<p>E2_T3 : <input type="text" name="E2_T3" size=20> </p>
+				<p>E2_T4 : <input type="text" name="E2_T4" size=20> </p>
+			  </div>
+			</div>
+
+			
+      </div>
+	  
+      <div id="sidebar">
+	  <img src="/IMG/LOGO.png" width="130px">
+        <h3><a href="/">DashBoard</a></h3>
+		<h3>사고대응</h3>
+        <ul>
+          <li><a href="/response-e1">Edge1</a></li>
+          <li><a href="/response-e2">Edge2</a></li>
+        </ul>
+		
+		<h3>정책변경</h3>
+        <ul>
+          <li><a href="/rule-e1">Edge1</a></li>
+          <li><a href="/rule-e2">Edge2</a></li>
+        </ul>
+		
+		<h3>로그보기</h3>
+		<ul>
+			<li><a href="/a-log">사고대응</a>
+			<li><a href="/na-log">정책변경</a>
+		</ul>
+		
+      </div>
+      <div id="footer">
+        <p>Copyright</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+    <title>Response_E1</title>
+	
+    <style>
+	
+	
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header"> 
+        <h1>사고뭉치 프로젝트</h1>
+      </div>
+
+	 
+      <div id="content">
+        <h2>사고대응_Edge1</h2>
+			<hr><br><br>
+			<div id="leftbox">
+				<img src="/IMG/E1_T3_GL.png" width="400px">
+			</div>
+			<div id="rightbox">
+				<input type="text" id="status" value="현재 정상 동작 중입니다" size=30> 
+				<button id="nomalization" value="정상 동작으로 돌리기" onclick="alert('정상동작요청!!')"> 정상 동작으로 돌리기! </button>
+				<br><br><br><br>
+				
+				<hr> 
+				<!-- <form id=light> -->
+				<div id="light">
+				  <br><br>
+					<select id="select_light">
+						<option value="" selected disabled hidden >신호등 선택</option>
+						<option value="1">T1</option>
+						<option value="2">T2</option>
+						<option value="3">T3</option>
+						<option value="4">T4</option>
+					</select>
+					<input type="text" id="control_light_time" placeholder="제어할 시간을 입력하세요." size=30> <p>
+				<!--아래 버튼 : 사고대응 과정 진행 동작 시작-->
+				<button id="Response_E1_btn" onclick="alert('요청성공!')" >Control !</button>
+				</div>
+			<!-- </form> -->
+			
+			</div>
+			<script src=/send_post.js></script>
+      </div>
+	  
+      <div id="sidebar">
+	  <img src="/IMG/LOGO.png" width="130px">
+        <h3><a href="/">DashBoard</a></h3>
+		<h3>사고대응</h3>
+        <ul>
+          <li><a href="/response-e1">Edge1</a></li>
+          <li><a href="/response-e2">Edge2</a></li>
+        </ul>
+		
+		<h3>정책변경</h3>
+        <ul>
+          <li><a href="/rule-e1">Edge1</a></li>
+          <li><a href="/rule-e2">Edge2</a></li>
+        </ul>
+		
+		<h3>로그보기</h3>
+		<ul>
+			<li><a href="/a-log">사고대응</a>
+			<li><a href="/na-log">정책변경</a>
+		</ul>
+		
+      </div>
+      <div id="footer">
+        <p>Copyright</p>
+      </div>
+    </div>
+  </body>
+</html>
