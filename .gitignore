@@ -1,5 +1,7 @@
+.gitconfig
 socket_programming.pem
-test.py
+__pycache__
+
 .bash_history
 .bash_logout
 .bashrc
@@ -14,4 +16,3 @@ test.py
 .ssh
 .sudo_as_admin_successful
 .viminfo
-
