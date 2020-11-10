@@ -12,7 +12,7 @@ router.post("/response-e1", (req, res) => {
   console.log(sec);
   console.log(light);
 
-  var title = "control.xml";
+  var title = "control_test.xml";
   var des = `<?xml version='1.0' encoding='utf-8'?>\n<control>\n\t<edgeNo>${edge}</edgeNo>\n\t<traffic_light>${light}</traffic_light>\n\t<how_many>${sec}</how_many>\n\t<occasion>${occ}</occasion>\n</control>`;
   fs.writeFile("./data/" + title, des, (err) => {
     if (err) {

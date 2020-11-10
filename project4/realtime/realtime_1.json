@@ -1,6 +1,5 @@
 {
-    "edgeNo":"1",
-    "traffic_light":"4",
-    "how_many":"30",
-    "occasion":"NA"
+	"edgeNo": "1",
+	"traffic_light": "2",
+	"time": "0"
 }
