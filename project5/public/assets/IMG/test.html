@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+
+<script LANGUAGE="JavaScript">
+
+
+
+function reloadImg(){
+
+uniq = new Date();
+
+uniq = "?"+uniq.getTime();
+var i;
+
+for (i=1;i<5;i++)
+{
+ var target='imgToLoad'+i;
+ newImage1 = document.images[target].src;
+ index1 = newImage1.indexOf("?", 0);
+ if(index1 > 0){
+ newImage1 = newImage1.substr(0, index1);
+ }
+ document.images[target].src = newImage1+uniq;
+}
+setTimeout('reloadImg()', 3000);
+}
+
+
+</script>
+
+</HEAD>
+
+<br>
+
+<body onload="reloadImg()">
+<table width=100% align=center cellspacing=0 cellpadding=0 border=0>
+<tr><td align=center>
+
+<table width=700 align=center cellspacing="0" cellpadding="0" border="1">
+
+<tr><td align=center width=175>
+
+<img src = E1_T1_GL.png  border=0 width=175 height=153 name="imgToLoad1">
+
+</td><td align=center width=175>
+
+<img src = E1_T1_O.png  border=0 width=175 height=153 name="imgToLoad2">
+
+</td><td align=center width=175>
+
+<img src = E1_T2_GL.png  border=0 width=175 height=153 name="imgToLoad3">
+
+</td><td align=center width=175>
+
+<img src = E1_T2_O.png  border=0 width=175 height=153 name="imgToLoad4">
+
+</td></tr>
+
+</table>
+
+</body></html>
+
+
+
+출처: https://prettygom.com/entry/html-이미지-자동-reload-시키는-javascript [알콩달콩 곰돌이네~]
