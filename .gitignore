@@ -17,7 +17,8 @@ __pycache__
 .sudo_as_admin_successful
 .viminfo
 .vim
-
+realtime_1.json
+realtime_2.json
 
 
 .env
