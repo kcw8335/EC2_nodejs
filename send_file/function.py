@@ -17,6 +17,7 @@ def parsing_XML_control(filename):
 import pymysql
 
 # control.xml을 보내기 전에 데이터베이스에 로깅하기 위한 함수
+# NA_Log, A_Log
 def logging(tmp_list):
     edgeNo = tmp_list[0]
     traffic_light = tmp_list[1]
@@ -66,3 +67,4 @@ def occasion_decision(current_occasion, occasion):
     else:
         return [current_occasion, False]
     return [current_occasion, True]
+
