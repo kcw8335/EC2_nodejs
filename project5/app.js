@@ -31,10 +31,6 @@ connection.connect(function (err) {
   if (err) console.error("connect error: " + err);
 });
 
-connection.query("select * from log", (error, rows) => {
-  if (error) console.log(error);
-  console.log("dbconnect:", rows);
-});
 
 const http = require("http").createServer(app);
 const io = require("socket.io").listen(http);
@@ -48,14 +44,22 @@ io.on("connection", (socket) => {
   fileload();
   console.log(data);
   socket.interval = setInterval(() => {
-    if (temp[0] != data[0] || temp[1] != data[1]) {
+
+connection.query("select * from log", (error, rows) => {
+  if (error) console.log(error);
+  console.log("dbconnect:", rows[0]);
+});
+
+
+
+if (temp[0] != data[0] || temp[1] != data[1]) {
       socket.emit("edge1", data);
 
       temp = data;
 
-      console.log("if 안", temp[0]);
+     // console.log("if 안", temp[0]);
     } else {
-      console.log("파일변경 없음");
+     // console.log("파일변경 없음");
       fileload();
     }
 
