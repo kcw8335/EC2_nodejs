@@ -31,7 +31,10 @@ connection.connect(function (err) {
   if (err) console.error("connect error: " + err);
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae27deee0e1ce16e13bf631dedfd380ff18fad08
 const http = require("http").createServer(app);
 const io = require("socket.io").listen(http);
 
@@ -39,11 +42,13 @@ let temp = ["", ""];
 let data = ["", ""];
 let traffic_light1 = "";
 let traffic_light2 = "";
+let dbstate;
 
 io.on("connection", (socket) => {
   fileload();
   console.log(data);
   socket.interval = setInterval(() => {
+<<<<<<< HEAD
 
 connection.query("select * from log", (error, rows) => {
   if (error) console.log(error);
@@ -54,16 +59,27 @@ connection.query("select * from log", (error, rows) => {
 
 if (temp[0] != data[0] || temp[1] != data[1]) {
       socket.emit("edge1", data);
+=======
+    connection.query("select * from log", (error, rows) => {
+      if (error) console.log(error);
+      dbstate = rows; //변경 *****
+      //console.log("dbconnect:", rows);
+    });
+>>>>>>> ae27deee0e1ce16e13bf631dedfd380ff18fad08
 
+    if (temp[0] != data[0] || temp[1] != data[1]) {
+      socket.emit("edge1", data, dbstate); // 변경 ************
       temp = data;
+<<<<<<< HEAD
 
      // console.log("if 안", temp[0]);
     } else {
      // console.log("파일변경 없음");
+=======
+    } else {
+>>>>>>> ae27deee0e1ce16e13bf631dedfd380ff18fad08
       fileload();
     }
-
-    // socket.emit("edge2", traffic_light2);
   }, 3000);
 });
 
