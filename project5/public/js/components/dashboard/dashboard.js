@@ -19,7 +19,7 @@ Dashboard.prototype = {
     setTimeout(function () {
       img1.src = "IMG/E1_T" + edges[0] + "_GL.png";
       img2.src = "IMG/E2_T" + edges[1] + "_GL.png";
-    }, 5000);
+    }, 3000);
   },
   // TODO: 꼭 봐!
   onInit() {
