@@ -34,6 +34,7 @@ def occasion_decision(current_occasion, occasion):
         return [current_occasion, False]
 
 # ===================================================================================================================================================
+
 # pip install pymysql
 import pymysql
 
@@ -83,3 +84,7 @@ def logging(tmp_list, state_change):
         curs.execute(sql, (state_change, "all_reset", "all_reset", "all_reset"))
         conn.commit()
         conn.close()
+
+
+
+

@@ -4,7 +4,6 @@ export function SocketController() {
 
 SocketController.prototype = {
   connect() {
-    // 소켓 연결
     const socket = io();
 
     socket.on("edge1", (data) => {

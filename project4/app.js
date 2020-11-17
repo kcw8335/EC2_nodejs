@@ -25,7 +25,6 @@ io.on("connection", (socket) => {
     const jsonData1 = JSON.parse(jsonFile1);
 
     var traffic_light1 = jsonData1.traffic_light;
-    // socket.emit("edge1", traffic_light1);
 
     const jsonFile2 = fs.readFileSync("./realtime/realtime_2.json", "utf8");
     const jsonData2 = JSON.parse(jsonFile2);
@@ -36,9 +35,7 @@ io.on("connection", (socket) => {
 
     socket.emit("edge1", data);
     console.log(data);
-    // socket.emit("edge2", traffic_light2);
   }, 5000);
 });
 
 module.exports = http;
-// module.exports = app;

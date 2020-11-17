@@ -46,26 +46,18 @@ io.on("connection", (socket) => {
   console.log(data);
   socket.interval = setInterval(() => {
 
-connection.query("select * from log", (error, rows) => {
-  if (error) console.log(error);
-  console.log("dbconnect:", rows[0]);
-});
-
-
+	  connection.query("select * from log", (error, rows) => {
+	  	if(error) console.log(error);
+		dbstate =rows;
+	  });
 
 if (temp[0] != data[0] || temp[1] != data[1]) {
-      socket.emit("edge1", data);
     connection.query("select * from log", (error, rows) => {
       if (error) console.log(error);
       dbstate = rows;
     });
 
-    if (temp[0] != data[0] || temp[1] != data[1]) {
-      socket.emit("edge1", data, dbstate); // 변경 ************
-      temp = data;
-
-     // console.log("if 안", temp[0]);
-    } else {
+     else {
            fileload();
     }
   }, 3000);

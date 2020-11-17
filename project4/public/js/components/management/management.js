@@ -77,8 +77,10 @@ Management.prototype = {
   },
   postmsg_nomal() {
     console.log("nomal");
+	  var edge = document.querySelector("#edge-number").value;
+
     var data = {
-      edgeNo: "",
+      edgeNo: `${edge}`,
       traffic_light: "",
       how_many: "",
       occasion: "nomalization",
