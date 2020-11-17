@@ -3,7 +3,7 @@
 - send_control_xml.py - nodejs로부터 control xml파일을 받아서 전송하는 역할 및 데이터베이스 로깅
 - 사용방법 - python3 send_control_xml.py 명령
 - function.py - send_control_xml에서 사용하는 각종 함수가 들어가 있는 python 파일
-- instruction.json 파일 - 
+- instruction.json 파일 - 각종 명령어, 파일의 경로가 담겨진 Json 파일
 
 2. project4 폴더
 - nodejs로 만든 웹서버
