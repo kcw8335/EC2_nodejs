@@ -22,7 +22,7 @@ realtime_2.json
 control_1.xml
 control_2.xml
 control_test.xml
-instruction.json
+secrets.json
 
 .env
 .idea
