@@ -1,7 +1,7 @@
 # EC2_nodejs
 1. send_file 폴더
 - send_control_xml.py - nodejs로부터 control xml파일을 받아서 전송하는 역할 및 데이터베이스 로깅
-- 사용방법 - python3 send_control_xml.py 명령
+- 실행 방법 - python3 send_control_xml.py 명령
 - function.py - send_control_xml에서 사용하는 각종 함수가 들어가 있는 python 파일
 - secrets.json 파일 - 각종 명령어, 파일의 경로가 담겨진 Json 파일 - 보안을 위해 git에서는 올리지 않음
 
