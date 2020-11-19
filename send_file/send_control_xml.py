@@ -33,4 +33,4 @@ while True:
             os.remove(json_data["file_path_xml_2"])
         # 그 외에 파일들은 삭제!!
         else:
-            os.remove(file_path_xml)
+            os.remove(json_data["file_path_xml"])
