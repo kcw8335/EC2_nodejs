@@ -1,3 +1,5 @@
+
+
 export function Dashboard(state) {
   this.state = state;
 }
@@ -16,10 +18,11 @@ Dashboard.prototype = {
     const img2 = document.querySelector("#img_E2");
     img2.src = "IMG/E2_T" + edges[1] + "_GL.png";
   },
-  // TODO: 꼭 봐!
+
   onInit() {
     this.changeDom();
   },
+
   getBody() {
     return `
       <div class="dashboard__container">
@@ -37,3 +40,6 @@ Dashboard.prototype = {
   },
   initEventListeners() {},
 };
+
+
+

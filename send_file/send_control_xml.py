@@ -1,8 +1,7 @@
 # 라즈베리파이로 xml데이터를 전송하기 위한 python file
 from function import *
 import os
-
-import json # import json module
+import json
 
 # secrets.json 파일 열어서 데이터 받아오기
 with open('secrets.json', encoding="UTF-8") as json_file:

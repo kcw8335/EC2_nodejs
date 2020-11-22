@@ -22,7 +22,7 @@ Management.prototype = {
   <div class="controller-container">
     <div class="controller-container__top">
       <div class="subtitle">
-        부제목
+        체계관리
       </div>
       <div class="management__controller">
         <select id="edge-number" class="edge-number">
@@ -81,9 +81,9 @@ Management.prototype = {
 
     var data = {
       edgeNo: `${edge}`,
-      traffic_light: "",
-      how_many: "",
-      occasion: "nomalization",
+      traffic_light: "0",
+      how_many: "0",
+      occasion: "normalization",
     };
 
     this.send_postmsg(data);

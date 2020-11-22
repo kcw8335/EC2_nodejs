@@ -13,6 +13,12 @@ def parsing_XML_control(filename):
     occasion = root.findtext("occasion")
     return [edgeNo, traffic_light, how_many, occasion]
 
+
+import json
+
+with open('secrets.json', encoding="UTF-8") as json_file:
+        json_data = json.load(json_file)
+
 # pip install pymysql
 import pymysql
 
@@ -36,20 +42,19 @@ def control_xml_logging(control_list, db_list):
     # Connection으로부터 Cursor 생성
     curs = conn.cursor()
     # 모든 xml 데이터 로깅
-    sql = "insert into Control_Xml_Log(edgeNo, traffic_light, how_many, occasion, logging_date) values(%s, %s, %s, %s, now())"
+    sql = json_data["All_Control_Log"]
     curs.execute(sql, (edgeNo, traffic_light, how_many, occasion))
     
     if occasion == "NA":
         state_change = "정책변경"
-        sql = "insert into NA_Log(state_change, edgeNo, traffic_light, how_many, logging_date) values(%s, %s, %s, %s, now())"
-        curs.execute(sql, (state_change, edgeNo, traffic_light, how_many))
+        curs.execute(json_data["NA_Log"], (state_change, edgeNo, traffic_light, how_many))
     elif occasion == "A":
         state_change = "사고대응"
-        sql = "insert into A_Log(state_change, edgeNo, traffic_light, how_many, logging_date) values(%s, %s, %s, %s, now())"
-        curs.execute(sql, (state_change, edgeNo, traffic_light, how_many))
-    elif occasion == "nomalization":
+        curs.execute(json_data["A_Log"], (state_change, edgeNo, traffic_light, how_many))
+    elif occasion == "normalization":
         state_change = "정상화"
-        sql = "insert into A_Log(state_change, edgeNo, traffic_light, how_many, logging_date) values(%s, %s, %s, %s, now())"
-        curs.execute(sql, (state_change, edgeNo, "all_reset", 0))
+        curs.execute(json_data["A_Log"], (state_change, edgeNo, "all_reset", 0))
     conn.commit()
     conn.close()
+
+
